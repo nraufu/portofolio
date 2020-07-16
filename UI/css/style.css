@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6rem;
+    overflow: hidden;
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 .2rem 2rem rgba(0, 0, 0, 0.25);
+    z-index: 500;
+}
+
+.navigation__logo {
+    padding: .5rem 10rem;
+}
+
+.navigation__nav {
+    text-transform: uppercase;
+    padding: 2rem 10rem;
+}
+
+.navigation__list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.navigation__item {
+    display: inline;
+    margin: 1rem;
+}
+
+.navigation__link:link,
+.navigation__link:visited {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #000000;
+    font-weight: bold;
+    transition: all .3s;
+}
+
+.navigation__link:active,
+.navigation__link:hover {
+    color: #7ED56F;
+}
+
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.introduction {
+    padding: 15rem 0;
+    position: relative;
+}
+
+.introduction__details {
+    font-size: 2.5rem;
+}
+
+.introduction__details h1 {
+    font-weight: 200;
+    margin-bottom: 1.2rem;
+    font-size: 6rem;
+}
+
+.introduction__details .name {
+    color: #7ED56F;
+    font-weight: 600;
+}
+
+.introduction__details p {
+    margin-bottom: 6rem;
+    font-size: 1.6rem;
+}
+
+.introduction__details .character span {
+    font-weight: 600;
+    font-style: italic;
+}
+
+.introduction__img {
+    position: absolute;
+    top: -30%;
+    right: -70%;
+}
+
+.introduction__img img {
+    width: 150rem;
+    height: 75rem;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: .15rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    padding: 1.5rem 3rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.btn:active,
+.btn:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.btn--green {
+    background-color: #7ED56F;
+    color: #fff;
+}
+
+
+.scroll-down {
+    position: absolute;
+    top: 95%;
+    left: 50%;
+}
+
+.scroll-down a img {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    color: #7ED56F;
+}
