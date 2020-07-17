@@ -18,21 +18,51 @@ body {
 }
 
 .navigation {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    padding: .5rem 10rem;
+    position: fixed;
+    z-index: 3;
+    background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 .2rem 2rem rgba(0, 0, 0, 0.25);
-    z-index: 500;
 }
 
 .navigation__logo {
-    padding: .5rem 10rem;
+    float: left;
+}
+
+.navigation__checkbox {
+    display: none;
+}
+
+.navigation__button {
+    display: none;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: -.5rem;
+    right: 4rem;
+    border-radius: 50%;
+    z-index: 10;
+    text-align: center;
+    cursor: pointer;
+}
+
+.navigation__background {
+    display: none;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: -.5rem;
+    right: 4.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 5;
+    transform: scale(0.1);
+    transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
 }
 
 .navigation__nav {
-    text-transform: uppercase;
-    padding: 2rem 10rem;
+    float: right;
 }
 
 .navigation__list {
@@ -43,22 +73,93 @@ body {
 }
 
 .navigation__item {
-    display: inline;
-    margin: 1rem;
+    float: left;
+    padding: 1.5rem 2rem;
 }
 
 .navigation__link:link,
 .navigation__link:visited {
-    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
     font-size: 1.2rem;
-    color: #000000;
-    font-weight: bold;
-    transition: all .3s;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .4s;
 }
 
-.navigation__link:active,
-.navigation__link:hover {
-    color: #7ED56F;
+.navigation__link:link span,
+.navigation__link:visited span {
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+.navigation__link:hover,
+.navigation__link:active {
+    color: #55c57a;
+    transform: translateY(-1px);
+}
+
+.navigation__checkbox:checked~.navigation__background {
+    transform: scale(80);
+}
+
+.navigation__checkbox:checked~.navigation__nav {
+    opacity: 1;
+    width: 100%;
+}
+
+.navigation__icon {
+    position: relative;
+    margin-top: 3.5rem;
+}
+
+.navigation__icon,
+.navigation__icon::before,
+.navigation__icon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: #333;
+    display: inline-block;
+}
+
+.navigation__icon::before,
+.navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all .2s;
+}
+
+.navigation__icon::before {
+    top: -.8rem;
+}
+
+.navigation__icon::after {
+    top: .8rem;
+}
+
+.navigation__button:hover .navigation__icon::before {
+    top: -1rem;
+}
+
+.navigation__button:hover .navigation__icon::after {
+    top: 1rem;
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon {
+    background-color: transparent;
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.navigation__checkbox:checked+.navigation__button .navigation__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
 }
 
 .container {
@@ -100,6 +201,7 @@ body {
     position: absolute;
     top: -30%;
     right: -70%;
+    z-index: -3;
 }
 
 .introduction__img img {
@@ -152,4 +254,43 @@ body {
     width: 2rem;
     height: 2rem;
     color: #7ED56F;
+}
+
+@media (max-width: 768px) {
+    .introduction__img {
+        display: none;
+    }
+
+    .navigation {
+        padding: .5rem 4rem;
+    }
+
+    .navigation__button,
+    .navigation__background {
+        display: block;
+    }
+
+    .navigation__nav {
+        height: 100vh;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 7;
+        opacity: 0;
+        transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+    }
+
+    .navigation__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    .navigation__item {
+        width: 100%;
+    }
 }
