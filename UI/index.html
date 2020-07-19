@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rauf | Full-stack developer</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="shortcut icon" href="./assets/images/Logo.png">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./assets/images/Logo.png" />
 </head>
 
 <body>
     <div class="navigation">
-        <a href="#home" class="navigation__logo"><img src="./assets/images/Logo.png" alt="logo"></a>
+        <a href="#intro" class="navigation__logo"><img src="./assets/images/Logo.png" alt="logo" /></a>
         <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
 
         <label for="navi-toggle" class="navigation__button">
@@ -22,24 +22,76 @@
 
         <div class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item"><a href="#About" class="navigation__link">About</a></li>
-                <li class="navigation__item"><a href="#Blog" class="navigation__link">Blog</a></li>
-                <li class="navigation__item"><a href="#Portofolio" class="navigation__link">Portofolio</a></li>
-                <li class="navigation__item"><a href="#Contact" class="navigation__link">Contact</a></li>
+                <li class="navigation__item">
+                    <a href="#About" class="navigation__link">About</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#Blog" class="navigation__link">Blog</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#Portofolio" class="navigation__link">Portofolio</a>
+                </li>
+                <li class="navigation__item">
+                    <a href="#Contact" class="navigation__link">Contact</a>
+                </li>
             </ul>
         </div>
     </div>
     <div class="container">
-        <section class="introduction">
+        <section class="introduction" id="intro">
             <div class="introduction__details">
                 <h1>Hello <span>👋</span>,</h1>
                 <h1>I'm <span class="name">Rauf</span></h1>
                 <p class="character">A <span>Passionate</span> Full-stack developer</p>
                 <a href="#About" class="btn btn--green">About me</a>
             </div>
-            <div class="introduction__img"><img src="./assets/images/logo-big.svg" alt="logo-big"></div>
-            <div class="scroll-down"><a href="#About"><img src="./assets/images/arrow-down-sign-to-navigate.svg"
-                        alt="scroll-down-button"></a></div>
+            <div class="introduction__img">
+                <img src="./assets/images/logo-big.svg" alt="logo-big" />
+            </div>
+            <div class="scroll-down">
+                <a href="#About"><img src="./assets/images/arrow-down-sign-to-navigate.svg"
+                        alt="scroll-down-button" /></a>
+            </div>
+        </section>
+        <section class="about" id="About">
+            <div class="section__desc">
+                <h1 class="heading__primary">About me</h1>
+                <p>
+                    If You’re <span class="bold">Wondering</span> who
+                    <span class="bold">I am....</span>
+                </p>
+            </div>
+            <p>
+                I'm <span class="highlight">Rauf</span>, a 23 years old Enthusiast
+                full-stack developer, from <span class="highlight">Rwanda</span>.
+            </p>
+            <p>
+                After my academic A level completion I became curious about software
+                development so I continued my bachelor degree studies in
+                <span class="bold">"Business Information Technology" </span> where I was taught alot different <span
+                    class="bold">Programming languages, system designs and databases</span>. I am a
+                self-motivated and fully engaged developer who likes to solve
+                problems.
+            </p>
+
+            <p>
+                I always want to <span class="bold">learn more, do more and be more</span>. I'm also a firm believer
+                that we learn by <span class="highlight">doing</span> and that we should <span class="highlight">never
+                    settle</span>.
+                I'm <span class="bold">hard working, super curious, passionate, committed,</span>and also a <span
+                    class="bold">good leaner</span>!</p>
+            <div class="stacks">
+                <h2 class="heading__secondary">
+                    My current <span class="highlight">stack</span> of
+                    <span class="highlight">technologies/languages</span> is :
+                </h2>
+                <p>
+                    html5 - css3 - javascript - nodejs - expressjs - firebase - sass -
+                    reactjs
+                </p>
+            </div>
+
+            <a href="#Resume" class="btn btn--green">Resume</a>
         </section>
     </div>
 </body>
