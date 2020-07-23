@@ -448,6 +448,121 @@ body {
     margin: 3rem;
 }
 
+.contact {
+    position: relative;
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3rem;
+    border: 1px solid #55c57a;
+    border-radius: 2rem;
+}
+
+.form__group:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.form__input {
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 1rem;
+    border-radius: 2px;
+    border: none;
+    border-bottom: 1px dashed #55c57a;
+    width: 100%;
+    display: block;
+    transition: all .3s;
+}
+
+.form__input:focus {
+    outline: none;
+
+}
+
+.form::-webkit-input-placeholder {
+    color: #333;
+}
+
+.form__label {
+    font-size: 1.2rem;
+    text-align: initial;
+    font-weight: 700;
+    margin-left: 1rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+}
+
+.form__input:placeholder-shown+.form__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+}
+
+.form__textarea {
+    width: 100%;
+    resize: none;
+    font-family: inherit;
+    color: inherit;
+    font-size: 1.4rem;
+    border-radius: 2px;
+    padding: 1rem;
+    line-height: 1.4;
+    border: .5px dashed #55c57a;
+}
+
+.form__btn {
+    margin-top: 4rem;
+}
+
+.social {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.social__media {
+    margin: 1rem;
+    border: 3px solid #55c57a;
+    border-radius: 50%;
+    padding: 1rem;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.social__media--icon {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.social__media:hover {
+    border: 3px solid #fff;
+    background-color: #55c57a;
+}
+
+.logo__contact h1 {
+    font-size: 5rem;
+    margin-top: 1.5rem;
+}
+
+.logo__contact p {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 @keyframes moveFromBottom {
     0% {
         transform: translateY(5px);
@@ -521,6 +636,11 @@ body {
         padding: .5rem 1rem;
     }
 
+    .social__media--icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -559,6 +679,20 @@ body {
 
     .navigation__item {
         width: 100%;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .social__media {
+        border: 1px solid #55c57a;
+        border-radius: 50%;
+    }
+
+    .social__media--icon {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
 
