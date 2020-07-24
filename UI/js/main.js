@@ -10,3 +10,11 @@ if (navigationItem) {
         navigationItem[i].addEventListener('click', hideMenu);
     }
 }
+
+const toggleFavorite = (e) => {
+    e.target.classList.toggle('icon--heart-active')
+};
+
+const favBtn = document.querySelector(".js-icon-heart");
+
+if (favBtn) favBtn.addEventListener('click', toggleFavorite);

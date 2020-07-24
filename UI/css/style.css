@@ -200,6 +200,7 @@ body {
 }
 
 .container {
+    position: relative;
     width: 75%;
     margin: 0 auto;
 }
@@ -305,6 +306,10 @@ body {
 .btn-text:active {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
     transform: translateY(0);
+}
+
+.active {
+    color: #55c57e !important;
 }
 
 .scroll-down {
@@ -646,6 +651,72 @@ body {
     font-weight: 500;
 }
 
+.blogs {
+    padding: 8rem;
+}
+
+.cards {
+    overflow-y: hidden;
+    overflow-x: auto;
+    height: auto;
+    padding: 2rem;
+    box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2rem;
+}
+
+.cards__container {
+    display: flex;
+    width: 270%;
+    height: 55rem;
+}
+
+.card__blog {
+    border-radius: 2rem;
+    overflow: hidden;
+    margin: 2rem;
+    box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.2);
+}
+
+.blog__image {
+    width: 90%;
+    height: 40rem;
+    margin: 0 auto;
+    background-image: url('../assets/images/collaboration.jpg');
+    background-size: 100% 100%;
+    border-radius: 2rem;
+    margin-bottom: 4rem;
+}
+
+.blog__content {
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: center;
+}
+
+.story-fav-icon {
+    margin-left: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon {
+    width: 25px;
+    color: #444;
+    transition: 0.2s ease-in;
+}
+
+.icon--heart-active {
+    animation: scale_in 0.3s linear 1;
+    color: #55c57a;
+}
+
+.blog__header {
+    display: flex;
+    justify-content: space-between;
+}
+
 @keyframes moveFromBottom {
     0% {
         transform: translateY(5px);
@@ -695,6 +766,10 @@ body {
 
     .blog__post:not(:last-child) {
         margin-right: 2.1rem;
+    }
+
+    .cards__container {
+        width: 400%;
     }
 }
 
@@ -769,6 +844,14 @@ body {
         height: 55%;
     }
 
+    .blogs {
+        padding: 8rem 0;
+    }
+
+    .blog__content {
+        text-align: initial;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -829,6 +912,10 @@ body {
 
     .blog__post {
         height: 46rem;
+    }
+
+    .cards__container {
+        width: 800%;
     }
 
 }
