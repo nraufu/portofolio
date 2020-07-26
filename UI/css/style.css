@@ -717,6 +717,15 @@ body {
     justify-content: space-between;
 }
 
+.signIn {
+    padding: 10rem 0;
+    text-align: center;
+}
+
+.width {
+    width: 40% !important;
+}
+
 @keyframes moveFromBottom {
     0% {
         transform: translateY(5px);
