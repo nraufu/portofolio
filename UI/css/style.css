@@ -279,9 +279,24 @@ body {
     color: #fff;
 }
 
+.btn--green:hover {
+    background-color: #fff;
+    color: #7ED56F;
+}
+
 .btn--black {
     color: #000;
     border: .5px solid #000;
+}
+
+.btn--red {
+    background-color: red;
+    color: #fff;
+}
+
+.btn--red:hover {
+    background-color: #fff;
+    color: red;
 }
 
 .btn-text:link,
@@ -778,6 +793,28 @@ body {
 
 .query__card--details p {
     font-size: 1.4rem;
+}
+
+.addBlog {
+    padding: 8rem 0;
+}
+
+.post {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.15);
+    background-color: #eee;
+}
+
+.post .form__group .form__input,
+.post .form__group .form__textarea {
+    border: none;
+}
+
+.center {
+    text-align: center;
 }
 
 
