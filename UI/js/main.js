@@ -40,3 +40,42 @@ const editBlog = (e) => {
 
 if (favBtn) favBtn.addEventListener('click', toggleFavorite);
 if (editBlogBtn) editBlogBtn.addEventListener('click', editBlog);
+
+//firebase
+const form = document.querySelector('#form');
+const message = document.querySelector('.message');
+const cards = document.querySelector('#queries__cards');
+
+
+const renderMessages = (doc) => {
+    const card = document.createElement('div');
+    card.classList.add('query__card');
+
+    card.innerHTML = `
+    <div class="query__card--details">
+        <h4>${doc.data().name}, <span>${doc.data().email}</span></h4>
+        <p>${doc.data().message}</p>
+    </div>`;
+
+    cards.appendChild(card);
+}
+
+db.collection('queries').onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    changes.forEach(change => {
+        if (change.type == 'added') {
+            renderMessages(change.doc);
+        }
+    })
+});
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    db.collection('queries').add({
+        email: form.email.value,
+        name: form.name.value,
+        message: form.query.value
+    });
+
+    message.textContent = 'Successfully Sent';
+});

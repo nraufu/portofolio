@@ -248,7 +248,8 @@ body {
 
 .btn,
 .btn:link,
-.btn:visited {
+.btn:visited,
+input[type="submit"] {
     position: relative;
     font-size: 1.2rem;
     font-weight: 600;
@@ -259,6 +260,9 @@ body {
     padding: 1.5rem 3rem;
     display: inline-block;
     border-radius: 10rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
     transition: all .2s;
 }
 
@@ -557,10 +561,10 @@ body {
     text-align: center;
 }
 
-.form {
+#form {
     width: 80%;
     margin: 0 auto;
-    padding: 3rem;
+    padding: 4rem 3rem 3rem 3rem;
     border: 1px solid #55c57a;
     border-radius: 2rem;
 }
@@ -745,7 +749,7 @@ body {
     padding: 10rem 0;
 }
 
-.queries__cards {
+#queries__cards {
     width: 70%;
     margin: 0 auto;
 }
@@ -771,7 +775,7 @@ body {
 }
 
 .query__card--icon img {
-    width: 100%;
+    width: 50%;
     border-radius: 50%;
     border: 1px solid #55c57e;
     padding: 1rem;
@@ -817,6 +821,11 @@ body {
     text-align: center;
 }
 
+.message {
+    color: green;
+    font-size: 1.2rem;
+    animation: moveFromBottom 1s ease-in;
+}
 
 @keyframes moveFromBottom {
     0% {
@@ -1040,7 +1049,7 @@ body {
         width: 100% !important;
     }
 
-    .queries__cards {
+    #queries__cards {
         width: 90%;
     }
 
