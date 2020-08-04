@@ -761,13 +761,12 @@ input[type="submit"] {
     display: flex;
     padding: 2rem;
     cursor: pointer;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
     transition: all .3s;
 }
 
 .query__card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
 }
 
 .query__card:not(:last-child) {
@@ -787,16 +786,20 @@ input[type="submit"] {
 
 .query__card--details h4 {
     color: #55c57a;
-    margin-bottom: 1rem;
 }
 
 .query__card--details h4 span {
     color: #5e5e5e;
-    font-style: italic;
+}
+
+.query__card--details .location {
+    font-weight: bolder;
+    font-size: 1rem;
 }
 
 .query__card--details p {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    margin-top: 1.5rem;
 }
 
 .addBlog {
