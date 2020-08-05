@@ -5,6 +5,8 @@ const editBlogBtn = document.querySelector(".edit-blog");
 const form = document.querySelector("#form");
 const message = document.querySelector(".message");
 const cards = document.querySelector("#queries__cards");
+const signIn = document.querySelector('.signIn-form');
+const errorMessage = document.querySelector('.error');
 
 const hideMenu = () => {
   menu.checked = false;
@@ -103,5 +105,35 @@ if (form) {
     });
 
     message.textContent = "Successfully Sent";
+
+    form.reset();
+
   });
+}
+
+if (signIn) {
+  signIn.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = signIn.username.value;
+    const password = signIn.password.value;
+    firebase.auth().signInWithEmailAndPassword(username, password).then(response => {
+      window.location = "/UI/pages/Admin/queries.html";
+    }).catch(function (error) {
+      if (error.code === 'auth/wrong-password') {
+        errorMessage.innerHTML = 'Wrong Password';
+        signIn.reset();
+      }
+
+      if (error.code === "auth/user-not-found") {
+        errorMessage.innerHTML = "User doesn't exist";
+        signIn.reset();
+      }
+
+      if (error.code === "auth/invalid-email") {
+        errorMessage.innerHTML = "Invalid Email";
+        signIn.reset();
+      }
+    })
+  });
+
 }

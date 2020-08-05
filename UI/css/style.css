@@ -830,6 +830,12 @@ input[type="submit"] {
     animation: moveFromBottom 1s ease-in;
 }
 
+.error {
+    color: red;
+    font-size: 1.2rem;
+    animation: moveFromBottom 1s ease-in;
+}
+
 @keyframes moveFromBottom {
     0% {
         transform: translateY(5px);
