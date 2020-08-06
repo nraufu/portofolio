@@ -48,116 +48,29 @@
 
             <div class="cards">
                 <div class="cards__container">
-
-                    <div class="card__blog">
-                        <div class="blog__post--image">
-                            &nbsp;
-                        </div>
-                        <div class="blog__post--description">
-                            <h4 class="blog__post--title">Blog Post Title</h4>
-                            <p class="blog__post--content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Aspernatur sunt, itaque, iste aliquam, unde doloremque non quo quaerat ipsa adipisci
-                                sequi
-                                temporibus delectus nostrum! Placeat?</p>
-                            <a href="./adminBlog.html" class="btn-text">Show in Full &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="card__blog">
-                        <div class="blog__post--image">
-                            &nbsp;
-                        </div>
-                        <div class="blog__post--description">
-                            <h4 class="blog__post--title">Blog Post Title</h4>
-                            <p class="blog__post--content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Aspernatur sunt, itaque, iste aliquam, unde doloremque non quo quaerat ipsa adipisci
-                                sequi
-                                temporibus delectus nostrum! Placeat?</p>
-                            <a href="./adminBlog.html" class="btn-text">Show in Full &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="card__blog">
-                        <div class="blog__post--image">
-                            &nbsp;
-                        </div>
-                        <div class="blog__post--description">
-                            <h4 class="blog__post--title">Blog Post Title</h4>
-                            <p class="blog__post--content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Aspernatur sunt, itaque, iste aliquam, unde doloremque non quo quaerat ipsa adipisci
-                                sequi
-                                temporibus delectus nostrum! Placeat?</p>
-                            <a href="./adminBlog.html" class="btn-text">Show in Full &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="card__blog">
-                        <div class="blog__post--image">
-                            &nbsp;
-                        </div>
-                        <div class="blog__post--description">
-                            <h4 class="blog__post--title">Blog Post Title</h4>
-                            <p class="blog__post--content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Aspernatur sunt, itaque, iste aliquam, unde doloremque non quo quaerat ipsa adipisci
-                                sequi
-                                temporibus delectus nostrum! Placeat?</p>
-                            <a href="./adminBlog.html" class="btn-text">Show in Full &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="card__blog">
-                        <div class="blog__post--image">
-                            &nbsp;
-                        </div>
-                        <div class="blog__post--description">
-                            <h4 class="blog__post--title">Blog Post Title</h4>
-                            <p class="blog__post--content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Aspernatur sunt, itaque, iste aliquam, unde doloremque non quo quaerat ipsa adipisci
-                                sequi
-                                temporibus delectus nostrum! Placeat?</p>
-                            <a href="./adminBlog.html" class="btn-text">Show in Full &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="card__blog">
-                        <div class="blog__post--image">
-                            &nbsp;
-                        </div>
-                        <div class="blog__post--description">
-                            <h4 class="blog__post--title">Blog Post Title</h4>
-                            <p class="blog__post--content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Aspernatur sunt, itaque, iste aliquam, unde doloremque non quo quaerat ipsa adipisci
-                                sequi
-                                temporibus delectus nostrum! Placeat?</p>
-                            <a href="./adminBlog.html" class="btn-text">Show in Full &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="card__blog">
-                        <div class="blog__post--image">
-                            &nbsp;
-                        </div>
-                        <div class="blog__post--description">
-                            <h4 class="blog__post--title">Blog Post Title</h4>
-                            <p class="blog__post--content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Aspernatur sunt, itaque, iste aliquam, unde doloremque non quo quaerat ipsa adipisci
-                                sequi
-                                temporibus delectus nostrum! Placeat?</p>
-                            <a href="./adminBlog.html" class="btn-text">Show in Full &rarr;</a>
-                        </div>
-                    </div>
-                    <div class="card__blog">
-                        <div class="blog__post--image">
-                            &nbsp;
-                        </div>
-                        <div class="blog__post--description">
-                            <h4 class="blog__post--title">Blog Post Title</h4>
-                            <p class="blog__post--content">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Aspernatur sunt, itaque, iste aliquam, unde doloremque non quo quaerat ipsa adipisci
-                                sequi
-                                temporibus delectus nostrum! Placeat?</p>
-                            <a href="./adminBlog.html" class="btn-text">Show in Full &rarr;</a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpa_x2qEcYCIiNf3FPmy0yqE8zvAHbTBU",
+            authDomain: "portfolio-3855a.firebaseapp.com",
+            databaseURL: "https://portfolio-3855a.firebaseio.com",
+            projectId: "portfolio-3855a",
+            storageBucket: "portfolio-3855a.appspot.com",
+            messagingSenderId: "1049830615176",
+            appId: "1:1049830615176:web:9d7682884f6f4f96c9973d",
+            measurementId: "G-S8TEDDFXNW"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+    <script src="../../js/main.js"></script>
 </body>
 
 </html>
