@@ -308,6 +308,7 @@ input[type="submit"] {
     font-size: 1.4rem;
     color: #55c57a;
     display: inline-block;
+    margin: 1rem;
     text-decoration: none;
     border-bottom: 1px solid #55c57a;
     padding: 3px;
@@ -323,6 +324,31 @@ input[type="submit"] {
 }
 
 .btn-text:active {
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(0);
+}
+
+.btn-red:link,
+.btn-red:visited {
+    font-size: 1.4rem;
+    color: red;
+    display: inline-block;
+    margin: 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid red;
+    padding: 3px;
+    transition: all .3s;
+}
+
+.btn-red:hover {
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.btn-red:active {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
     transform: translateY(0);
 }
@@ -461,6 +487,8 @@ input[type="submit"] {
 .blog__post--content {
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
+    height: 7rem;
+    overflow: hidden;
 }
 
 .blog__btn {
@@ -670,7 +698,8 @@ input[type="submit"] {
     font-weight: 500;
 }
 
-.blogs {
+.blogs,
+.specificBlog {
     padding: 8rem;
 }
 
@@ -685,12 +714,13 @@ input[type="submit"] {
 
 .cards__container {
     display: flex;
-    width: 370%;
+    width: calc((45rem + 2rem) * 4);
     height: 55rem;
 }
 
 .card__blog {
     border-radius: 2rem;
+    width: 45rem;
     overflow: hidden;
     margin: 2rem;
     box-shadow: 1rem 2rem 4rem rgba(0, 0, 0, 0.2);
