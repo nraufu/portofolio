@@ -712,7 +712,8 @@ input[type="submit"] {
     border-radius: 2rem;
 }
 
-.cards__container {
+.cards__container,
+.cards__blog--container {
     display: flex;
     width: calc((45rem + 2rem) * 4);
     height: 55rem;
@@ -761,10 +762,10 @@ input[type="submit"] {
     color: #55c57a;
 }
 
-.blog__header {
+/* .blog__header {
     display: flex;
     justify-content: space-between;
-}
+} */
 
 .signIn {
     padding: 10rem 0;
@@ -864,6 +865,59 @@ input[type="submit"] {
     color: red;
     font-size: 1.2rem;
     animation: moveFromBottom 1s ease-in;
+}
+
+.comment__section {
+    margin: 2rem;
+    padding: 2rem;
+    border-top: 1px dashed #55c57a;
+    transition: all .3s;
+}
+
+.comment__section h4 {
+    margin-bottom: 3rem;
+}
+
+.comment {
+    display: flex;
+    background-color: #eee;
+    padding: 1rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+}
+
+.comment img {
+    width: 12%;
+    border-radius: 50%;
+}
+
+.comment .comment__details {
+    width: 80%;
+    margin-left: 2rem;
+}
+
+.comment .comment__details .name {
+    text-align: left;
+    margin-bottom: 1rem;
+    color: #55c57a;
+}
+
+.addComment__section {
+    margin: 2rem 0;
+}
+
+.addComment__section h4 {
+    display: inline;
+    margin: 1rem;
+    border-bottom: 1px dashed #55c57a;
+}
+
+.comment__form {
+    margin-top: 2rem;
+    width: 40%;
+    border: 1px solid #55c57e;
+    padding: 2rem;
+    border-radius: 2rem;
 }
 
 @keyframes moveFromBottom {

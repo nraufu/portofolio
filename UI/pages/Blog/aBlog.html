@@ -33,44 +33,51 @@
     </div>
     <div class="container">
         <section class="blogs">
-            <div class="blog__header">
-                <div class="section__desc">
-                    <h1 class="heading__primary">Blog Post Title</h1>
-                </div>
-                <div class="story-fav-icon">
-                    <svg aria-hidden="true" data-prefix="fas" data-icon="heart" class="icon js-icon-heart" role="img"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path fill="currentColor"
-                            d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z">
-                        </path>
-                    </svg>
-                </div>
+            <div class="aBlog">
+
             </div>
 
-            <div class="ablog">
-                <div class="blog__image">&nbsp;</div>
-                <div class="blog__content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos commodi
-                    sapiente cum non qui eveniet aperiam temporibus porro fuga beatae aspernatur quas, dolorum mollitia
-                    ipsa nostrum ex ipsum quaerat quae voluptatum accusantium libero? Laboriosam vitae quam amet soluta
-                    maxime. Nihil, odio! Distinctio et, quo obcaecati modi quaerat veritatis minus delectus libero sint
-                    ratione, corporis molestiae at placeat. Soluta ratione corrupti quam animi distinctio officiis
-                    inventore a eius beatae, harum quo. Atque ipsam corrupti maiores cum nemo tempore aliquid autem
-                    nostrum nihil omnis minima sint quibusdam eaque odio, aperiam rem! Cum nostrum et, alias, nulla
-                    recusandae nobis temporibus officiis qui veniam iste debitis dolorem in voluptate laboriosam? Rerum,
-                    natus molestiae. Excepturi voluptatem molestiae quis maxime dolorum officia eos fugiat deleniti
-                    itaque. Quam, doloribus. Deserunt necessitatibus id impedit pariatur aliquam nostrum perspiciatis
-                    excepturi autem ducimus provident dolorem obcaecati earum aperiam maxime sunt sit voluptatum, amet
-                    eaque architecto, odit distinctio alias enim minima cupiditate? Quisquam aliquid assumenda
-                    perferendis earum tempora quae inventore, laborum distinctio eveniet odit praesentium! Est
-                    blanditiis laborum nostrum, saepe possimus exercitationem reiciendis id repellat, eveniet
-                    necessitatibus voluptas aspernatur distinctio magni corporis magnam facere! Sequi placeat delectus
-                    velit aspernatur, ipsa maiores nam quis accusamus eligendi explicabo assumenda ab voluptate, quod
-                    perspiciatis?</div>
+            <div class="comment__section">
+                <h4>Comments: </h4>
             </div>
 
+            <div class="addComment__section">
+                <h4>Add a comment</h4>
+                <form class="comment__form">
+                    <div class="form__group">
+                        <input type="text" class="form__input" name="name" placeholder="Name" id="commenterName"
+                            required>
+                        <label for="commenterName" class="form__label">Name</label>
+                    </div>
+                    <div class="form__group">
+                        <textarea name="comment" id="comment" cols="3" rows="4" class="form__textarea"
+                            placeholder="Comment" required></textarea>
+                    </div>
+                    <div class="form__btn">
+                        <input type="submit" name="submitBtn" value="Post &rarr;"
+                            class="btn btn--green js-commentForm" />
+                    </div>
+                </form>
+            </div>
         </section>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpa_x2qEcYCIiNf3FPmy0yqE8zvAHbTBU",
+            authDomain: "portfolio-3855a.firebaseapp.com",
+            databaseURL: "https://portfolio-3855a.firebaseio.com",
+            projectId: "portfolio-3855a",
+            storageBucket: "portfolio-3855a.appspot.com",
+            messagingSenderId: "1049830615176",
+            appId: "1:1049830615176:web:9d7682884f6f4f96c9973d",
+            measurementId: "G-S8TEDDFXNW"
+        };
 
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
     <script src="../../js/main.js"></script>
 </body>
 
