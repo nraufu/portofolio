@@ -1,0 +1,27 @@
+{
+  "name": "portofolio",
+  "version": "1.0.0",
+  "description": "my portofolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server/app.js",
+    "dev": "nodemon ./server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nraufu/portofolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nraufu/portofolio/issues"
+  },
+  "homepage": "https://github.com/nraufu/portofolio#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.28",
+    "nodemon": "^2.0.4"
+  }
+}
