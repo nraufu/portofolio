@@ -12,6 +12,11 @@ class Posts {
         res.status(200).send(post);
     }
 
+    async getPosts(req, res) {
+        const posts = await Post.find()
+        res.status(200).send(posts);
+    }
+
 }
 
 module.exports = new Posts();
