@@ -21,6 +21,7 @@
   "homepage": "https://github.com/nraufu/portofolio#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "joi": "^17.2.0",
     "mongoose": "^5.9.28",
     "nodemon": "^2.0.4"
   }
