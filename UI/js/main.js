@@ -9,6 +9,14 @@ const errorMessage = document.querySelector(".error");
 const blogPostForm = document.querySelector(".post");
 const blogCards = document.querySelector(".cards__container");
 const blogSection = document.querySelector(".blogs");
+const userBlogSection = document.querySelector(".blog__posts");
+const allBlogsSection = document.querySelector(".cards__blog--container");
+const specificBlogSection = document.querySelector(".aBlog");
+const commentSection = document.querySelector(".comment__section");
+const commentForm = document.querySelector(".comment__form");
+
+const urlParams = new URLSearchParams(window.location.search);
+const blogId = urlParams.get("id");
 
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, "0");
@@ -34,7 +42,6 @@ const toggleFavorite = (e) => {
 if (favBtn) favBtn.addEventListener("click", toggleFavorite);
 
 let userLocation;
-let blogId;
 
 if (cards) {
   const renderMessages = (doc) => {
@@ -173,10 +180,13 @@ if (blogCards) {
 }
 
 const successCallback = (position) => {
-  const { latitude, longitude } = position.coords;
+  const {
+    latitude,
+    longitude
+  } = position.coords;
   fetch(
-    `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=cfb0503a9e62446bab7748c982c3ea65`
-  )
+      `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=cfb0503a9e62446bab7748c982c3ea65`
+    )
     .then((response) => response.json())
     .then((response) => {
       userLocation = response["results"][0]["formatted"];
@@ -249,4 +259,164 @@ if (blogPostForm) {
 
     blogPostForm.reset();
   });
+}
+
+if (userBlogSection) {
+  const viewBlog = (doc) => {
+    const card = document.createElement("div");
+    const cardImage = document.createElement("div");
+    const cardDescription = document.createElement("div");
+    const h4 = document.createElement("h4");
+    const p = document.createElement("p");
+    const readBtn = document.createElement("a");
+
+    card.classList.add("blog__post");
+    cardImage.classList.add("blog__post--image");
+    cardDescription.classList.add("blog__post--description");
+    h4.classList.add("blog__post--title");
+    p.classList.add("blog__post--content");
+    readBtn.classList.add("btn-text");
+
+    h4.textContent = doc.data().title;
+    p.textContent = doc.data().content;
+    readBtn.innerHTML = "Continue Reading &rarr;";
+    readBtn.setAttribute("href", "#");
+
+    cardDescription.appendChild(h4);
+    cardDescription.appendChild(p);
+    cardDescription.appendChild(readBtn);
+
+    card.setAttribute("data-id", doc.id);
+    card.appendChild(cardImage);
+    card.appendChild(cardDescription);
+
+    userBlogSection.appendChild(card);
+
+    readBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = `./pages/Blog/aBlog.html?id=${doc.id}`;
+    });
+  };
+
+  db.collection("blogs")
+    .limit(3)
+    .get()
+    .then((snapshot) => {
+      // snapshot.docs.forEach((doc) => {
+      //   console.log(doc.data());
+      // });
+      let changes = snapshot.docChanges();
+      changes.forEach((change) => {
+        if (change.type == "added") {
+          viewBlog(change.doc);
+        }
+      });
+    });
+}
+
+const renderThisBlog = (doc) => {
+  const aBlog = document.createElement("div");
+  aBlog.innerHTML = `<div class="blog__header">
+    <div class="section__desc">
+        <h1 class="heading__primary">${doc.data().title}</h1>
+    </div>
+  </div>
+  
+  <div class="ablog">
+    <div class="blog__image">&nbsp;</div>
+    <div class="blog__content">${doc.data().content}</div>
+  </div>`;
+
+  specificBlogSection.appendChild(aBlog);
+};
+
+const renderBlogComments = (doc) => {
+  const comment = document.createElement("div");
+  comment.innerHTML = `<div class="comment">
+  <img src="../../assets/images/userIcon.png" alt="icon">
+  <div class="comment__details">
+      <div class="name">${doc.name}</div>
+      <p>${doc.comment}</p>
+  </div>
+  </div>`;
+
+  commentSection.appendChild(comment);
+}
+
+if (allBlogsSection) {
+  const viewBlog = (doc) => {
+    const card = document.createElement("div");
+    const cardImage = document.createElement("div");
+    const cardDescription = document.createElement("div");
+    const h4 = document.createElement("h4");
+    const p = document.createElement("p");
+    const readBtn = document.createElement("a");
+
+    card.classList.add("card__blog");
+    cardImage.classList.add("blog__post--image");
+    cardDescription.classList.add("blog__post--description");
+    h4.classList.add("blog__post--title");
+    p.classList.add("blog__post--content");
+    readBtn.classList.add("btn-text");
+
+    h4.textContent = doc.data().title;
+    p.textContent = doc.data().content;
+    readBtn.innerHTML = "Continue Reading &rarr;";
+    readBtn.setAttribute("href", "./aBlog.html");
+
+    cardDescription.appendChild(h4);
+    cardDescription.appendChild(p);
+    cardDescription.appendChild(readBtn);
+
+    card.setAttribute("data-id", doc.id);
+    card.appendChild(cardImage);
+    card.appendChild(cardDescription);
+
+    allBlogsSection.appendChild(card);
+
+    readBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      window.location.href = `./aBlog.html?id=${doc.id}`;
+    });
+  };
+
+  db.collection("blogs")
+    .get()
+    .then((snapshot) => {
+      let changes = snapshot.docChanges();
+      changes.forEach((change) => {
+        if (change.type == "added") {
+          viewBlog(change.doc);
+        }
+      });
+    });
+}
+
+if (specificBlogSection) {
+  db.collection("blogs")
+    .doc(blogId)
+    .get()
+    .then((doc) => {
+      renderThisBlog(doc);
+    });
+
+  db.collection("blogs")
+    .doc(blogId)
+    .onSnapshot((doc) => {
+      doc.data().comments.map(comment => renderBlogComments(comment));
+    });
+
+  commentForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    commentSection.innerHTML = "";
+    db.collection("blogs").doc(blogId).update({
+      comments: firebase.firestore.FieldValue.arrayUnion({
+        name: commentForm.name.value,
+        comment: commentForm.comment.value
+      })
+    });
+    alert("comment posted Successfully");
+    commentForm.reset();
+  })
 }
