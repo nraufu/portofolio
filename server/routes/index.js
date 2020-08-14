@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Posts = require("../controllers/posts");
 const Queries = require("../controllers/queries");
+const User = require("../controllers/admin");
 
 router.get("/", function (req, res) {
     return res.send({
@@ -14,5 +15,7 @@ router.get("/posts", Posts.getPosts);
 
 router.post("/queries", Queries.createQuery);
 router.get("/queries", Queries.getQueries);
+
+router.post("/auth/login", User.login);
 
 module.exports = router;

@@ -9,7 +9,7 @@ class Posts {
         const {
             error
         } = validate(req.body);
-        if (error) return res.status(400).send(error.details[0].message);
+        if (error) return res.status(400).send({ error: error.details[0].message });
 
         const post = new Post({
             title: req.body.title,
