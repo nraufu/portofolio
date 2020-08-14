@@ -8,6 +8,11 @@ const PORT = 3000;
 app.use(express.json());
 app.use(routes);
 
+app.use((req, res, next) => {
+    res.status(400).json({ Error: 'Invalid Request' });
+    next();
+});
+
 mongoose
     .connect("mongodb://localhost:27017/Portfolio", {
         useNewUrlParser: true,
