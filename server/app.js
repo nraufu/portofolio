@@ -14,6 +14,7 @@ mongoose
         useUnifiedTopology: true,
     })
     .then(() => {
+        require("./seeds/admin");
         console.log("database SuccessFully connected!");
     });
 
