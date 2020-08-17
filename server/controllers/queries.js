@@ -1,12 +1,8 @@
-const { Query, validate } = require("../models/queries");
+const Query = require("../models/queries");
 
 class Queries {
 
     async createQuery(req, res) {
-        const { error } = validate(req.body);
-
-        if (error) return res.status(400).send({ status: 400, error: error.details[0].message });
-
         const query = new Query({
             name: req.body.name,
             email: req.body.email,
@@ -19,7 +15,8 @@ class Queries {
 
     async getQuery(req, res) {
         try {
-            const query = await Query.findOne({ _id: req.params.id })
+            const query = await Query.findOne({ _id: req.params.id });
+            if (!query) return res.status(404).send({ status: 404, error: "Query not found!" });
             res.status(200).send({ status: 200, query: query });
         } catch (error) {
             res.status(400).send({ status: 400, error: "Query not found!" });
@@ -37,6 +34,8 @@ class Queries {
 
     async deleteQuery(req, res) {
         try {
+            const query = await Query.findOne({ _id: req.params.id });
+            if (!query) return res.status(404).send({ status: 404, error: "Query not found!" });
             await Query.deleteOne({ _id: req.params.id })
             res.status(204).send({ status: 204, message: "deleted successfully" });
         } catch (error) {

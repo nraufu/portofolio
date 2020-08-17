@@ -1,11 +1,8 @@
-const { Post, validate } = require("../models/posts");
+const Post = require("../models/posts");
 
 class Posts {
 
     async createPosts(req, res) {
-        const { error } = validate(req.body);
-        if (error) return res.status(400).send({ status: 400, error: error.details[0].message });
-
         const post = new Post({
             title: req.body.title,
             content: req.body.content,
@@ -22,7 +19,8 @@ class Posts {
 
     async getPost(req, res) {
         try {
-            const post = await Post.findOne({ _id: req.params.id })
+            const post = await Post.findOne({ _id: req.params.id });
+            if (!post) return res.status(404).send({ status: 404, error: "Post not found!" });
             res.status(200).send({ status: 200, post: post });
         } catch (error) {
             res.status(400).send({ status: 400, error: "Post not found!" })
@@ -33,8 +31,6 @@ class Posts {
     async editPost(req, res) {
         try {
             const { title, content, imgLink } = req.body;
-            const { error } = validate(req.body);
-            if (error) return res.status(400).send({ status: 400, error: error.details[0].message });
             const post = await Post.findOne({ _id: req.params.id });
             if (!post) return res.status(404).send({ status: 404, error: "Post not found!" });
 
@@ -59,10 +55,12 @@ class Posts {
 
     async deletePost(req, res) {
         try {
-            await Post.deleteOne({ _id: req.params.id })
+            const post = await Post.findOne({ _id: req.params.id });
+            if (!post) return res.status(404).send({ status: 404, error: "Post not found!" });
+            await Post.deleteOne({ _id: req.params.id });
             res.status(204).send({ status: 204, message: "deleted successfully" });
         } catch (error) {
-            res.status(400).send({ status: 400, error: "Post doesn't exist!" })
+            res.status(400).send({ status: 400, error: "Post doesn't exist!" });
         }
     }
 
