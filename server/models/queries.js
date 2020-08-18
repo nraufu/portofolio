@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const Joi = require("joi");
 
 const schema = mongoose.Schema({
     name: {
@@ -19,15 +18,4 @@ const schema = mongoose.Schema({
 
 const Query = mongoose.model("queries", schema);
 
-function validateQueries(query) {
-    const schema = Joi.object({
-        name: Joi.string().min(5).max(50).required(),
-        email: Joi.string().min(5).required().email(),
-        query: Joi.string().min(100).max(300).required()
-    });
-
-    return schema.validate(query);
-}
-
-exports.Query = Query;
-exports.validate = validateQueries;
+module.exports = Query;
