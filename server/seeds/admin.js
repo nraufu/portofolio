@@ -1,7 +1,9 @@
-const Admin = require("../models/admin");
-require("dotenv").config();
+import Admin from "../models/admin";
+import dotenv from "dotenv";
 
-async function refreshDb() {
+dotenv.config();
+
+const refreshDb = async () => {
     await Admin.deleteOne({ email: process.env.ADMINUSERNAME });
 }
 

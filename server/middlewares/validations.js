@@ -1,5 +1,5 @@
-const Joi = require("joi");
-const returnError = require("../helpers/returnError");
+import Joi from "joi";
+import returnError from "../helpers/returnError";
 
 const validations = {
     adminLogin(req, res, next) {
@@ -49,4 +49,4 @@ const validations = {
     }
 }
 
-module.exports = validations;
+export default validations;

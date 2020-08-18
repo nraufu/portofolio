@@ -1,4 +1,4 @@
-const Post = require("../models/posts");
+import Post from "../models/posts";
 
 class Posts {
 
@@ -66,4 +66,4 @@ class Posts {
 
 }
 
-module.exports = new Posts();
+export default new Posts();

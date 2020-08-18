@@ -1,4 +1,4 @@
-const Post = require("../models/posts");
+import Post from "../models/posts";
 
 class Comments {
     async addComment(req, res) {
@@ -15,5 +15,4 @@ class Comments {
     }
 }
 
-
-module.exports = new Comments();
+export default new Comments();

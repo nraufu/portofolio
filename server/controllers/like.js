@@ -1,4 +1,4 @@
-const Post = require("../models/posts");
+import Post from "../models/posts";
 
 class Like {
     async likePost(req, res) {
@@ -14,4 +14,4 @@ class Like {
 }
 
 
-module.exports = new Like();
+export default new Like();

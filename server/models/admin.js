@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const Admin = mongoose.model('admin', new mongoose.Schema({
     id: mongoose.Schema.ObjectId,
@@ -6,4 +6,4 @@ const Admin = mongoose.model('admin', new mongoose.Schema({
     password: String
 }));
 
-module.exports = Admin;
+export default Admin;

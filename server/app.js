@@ -1,6 +1,6 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const routes = require("./routes");
+import express from "express";
+import mongoose from "mongoose";
+import routes from "./routes";
 
 const app = express();
 const PORT = 3000;
