@@ -1,5 +1,5 @@
-const Admin = require("../models/admin");
-const assignToken = require("../helpers/assignToken");
+import Admin from "../models/admin";
+import { assignToken } from "../helpers/assignToken";
 
 class User {
     async login(req, res) {
@@ -16,4 +16,4 @@ class User {
     }
 }
 
-module.exports = new User();
+export default new User();

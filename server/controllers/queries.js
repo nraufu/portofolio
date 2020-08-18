@@ -1,4 +1,4 @@
-const Query = require("../models/queries");
+import Query from "../models/queries";
 
 class Queries {
 
@@ -46,4 +46,4 @@ class Queries {
 
 }
 
-module.exports = new Queries();
+export default new Queries();

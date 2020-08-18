@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const schema = mongoose.Schema({
     name: {
@@ -18,4 +18,4 @@ const schema = mongoose.Schema({
 
 const Query = mongoose.model("queries", schema);
 
-module.exports = Query;
+export default Query;

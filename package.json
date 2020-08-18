@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server/app.js",
-    "dev": "nodemon ./server/app.js"
+    "start": "babel-node ./server/app.js",
+    "build": "babel server -d build",
+    "dev": "nodemon --exec babel-node ./server/app.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,13 @@
     "mongoose": "^5.9.28"
   },
   "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.4"

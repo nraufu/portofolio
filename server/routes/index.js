@@ -1,12 +1,13 @@
-const express = require('express');
+import express from 'express';
+import Posts from "../controllers/posts";
+import Queries from "../controllers/queries";
+import User from "../controllers/admin";
+import verifyToken from "../middlewares/verifyToken";
+import validations from "../middlewares/validations";
+import comments from '../controllers/comments';
+import like from '../controllers/like';
+
 const router = express.Router();
-const Posts = require("../controllers/posts");
-const Queries = require("../controllers/queries");
-const User = require("../controllers/admin");
-const verifyToken = require("../middlewares/verifyToken");
-const validations = require("../middlewares/validations");
-const comments = require('../controllers/comments');
-const like = require('../controllers/like');
 
 router.get("/", function (req, res) {
     return res.send({
@@ -30,4 +31,4 @@ router.delete("/queries/:id", verifyToken, validations.params, Queries.deleteQue
 router.post("/auth/login", validations.adminLogin, User.login);
 
 
-module.exports = router;
+export default router;
