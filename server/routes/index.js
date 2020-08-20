@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.get("/", function (req, res) {
     return res.send({
-        message: 'Hello there 👋'
+        message: 'Hello there 👋 welcome to my portfolio 🏡'
     });
 });
 
