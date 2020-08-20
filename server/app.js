@@ -1,6 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 import routes from "./routes";
+
+dotenv.config();
 
 const app = express();
 const PORT = 3000;
@@ -13,8 +16,10 @@ app.use((req, res, next) => {
     next();
 });
 
+let databaseUrl = process.env.NODE_ENV === "test" ? process.env.TEST_DATABASE_URL : process.env.DATABASE_URL;
+
 mongoose
-    .connect("mongodb://localhost:27017/Portfolio", {
+    .connect(databaseUrl, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
@@ -26,3 +31,5 @@ mongoose
 app.listen(PORT, () => {
     console.log("Server has started on port", PORT);
 });
+
+export default app;
