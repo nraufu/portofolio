@@ -7,8 +7,8 @@ import { postId } from "./posts.test";
 const { expect } = chai;
 chai.use(chaiHttp);
 
-describe('Comment on a blog Post', () => {
-    it('should return 200 ok status code on successful comment post', (done) => {
+describe('Like a blog Post', () => {
+    it('should return 200 ok status code on successful liked post', (done) => {
         chai
             .request(app)
             .post(`/posts/like/${postId}`)
