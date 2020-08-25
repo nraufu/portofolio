@@ -9,7 +9,7 @@ import like from '../controllers/like';
 
 const router = express.Router();
 
-router.get("/", function (req, res) {
+router.get("/", (req, res) => {
     return res.send({
         message: 'Hello there 👋 welcome to my portfolio 🏡'
     });
