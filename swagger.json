@@ -14,7 +14,7 @@
     },
     "host": "portfolio-nr.herokuapp.com",
     "basePath": "/",
-    "schemes": ["https"],
+    "schemes": ["HTTPS", "HTTP"],
     "consumes": ["application/json"],
     "produces": ["application/json"],
     "paths": {
@@ -71,6 +71,12 @@
                 "responses": {
                     "200": {
                         "description": "blog post created successfully"
+                    },
+                    "401": {
+                        "description": "you require an admin token to perform this request"
+                    },
+                    "403": {
+                        "description": "token invalid or expired"
                     },
                     "400": {
                         "description": "Bad request, Invalid input"
@@ -144,6 +150,12 @@
                     "200": {
                         "description": "blog post edited successfully"
                     },
+                    "401": {
+                        "description": "you require an admin token to perform this request"
+                    },
+                    "403": {
+                        "description": "token invalid or expired"
+                    },
                     "400": {
                         "description": "Bad request or invalid input field"
                     },
@@ -174,6 +186,12 @@
                 "responses": {
                     "204": {
                         "description": "blog post deleted successfully"
+                    },
+                    "401": {
+                        "description": "you require an admin token to perform this request"
+                    },
+                    "403": {
+                        "description": "token invalid or expired"
                     },
                     "404": {
                         "description": "blog post not found"
@@ -222,6 +240,12 @@
                 "responses": {
                     "200": {
                         "description": "queries successfully found"
+                    },
+                    "401": {
+                        "description": "you require an admin token to perform this request"
+                    },
+                    "403": {
+                        "description": "token invalid or expired"
                     }
                 }
             }
@@ -247,6 +271,12 @@
                 "responses": {
                     "200": {
                         "description": "query successfully found"
+                    },
+                    "401": {
+                        "description": "you require an admin token to perform this request"
+                    },
+                    "403": {
+                        "description": "token invalid or expired"
                     },
                     "404": {
                         "description": "query not found"
@@ -274,6 +304,12 @@
                 "responses": {
                     "204": {
                         "description": "query deleted successfully"
+                    },
+                    "401": {
+                        "description": "you require an admin token to perform this request"
+                    },
+                    "403": {
+                        "description": "token invalid or expired"
                     },
                     "404": {
                         "description": "query not found"
@@ -305,6 +341,31 @@
                 "responses": {
                     "200": {
                         "description": "comment posted successfully"
+                    },
+                    "400": {
+                        "description": "Bad request or invalid input field"
+                    },
+                    "404": {
+                        "description": "blog post not found"
+                    }
+                }
+            }
+        },
+
+        "/posts/like/{id}": {
+            "post": {
+                "tags": ["Users"],
+                "summary": "users comment on a blog post API",
+                "description": "comment on a blog post",
+                "operationId": "like",
+                "parameters": [{
+                    "in": "path",
+                    "name": "id",
+                    "required": true
+                }],
+                "responses": {
+                    "200": {
+                        "description": "blog post liked successfully"
                     },
                     "400": {
                         "description": "Bad request or invalid input field"
