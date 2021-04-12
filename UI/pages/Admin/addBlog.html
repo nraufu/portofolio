@@ -32,7 +32,7 @@
                     <a href="./addBlog.html" class="navigation__link active">Write blog</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="./signIn.html" class="navigation__link">Logout</a>
+                    <a href="#" class="navigation__link logout">Logout</a>
                 </li>
             </ul>
         </div>
@@ -48,6 +48,11 @@
                 </div>
 
                 <div class="form__group">
+                    <input type="text" name="blogImgLink" class="form__input" placeholder="Blog Post Image Link"
+                        required>
+                </div>
+
+                <div class="form__group">
                     <textarea name="blogPost" class="form__textarea" id="blog" cols="30" rows="20" minlength="100"
                         maxlength="3000" placeholder="type blog here..." required></textarea>
                 </div>
@@ -59,24 +64,7 @@
         </section>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyDpa_x2qEcYCIiNf3FPmy0yqE8zvAHbTBU",
-            authDomain: "portfolio-3855a.firebaseapp.com",
-            databaseURL: "https://portfolio-3855a.firebaseio.com",
-            projectId: "portfolio-3855a",
-            storageBucket: "portfolio-3855a.appspot.com",
-            messagingSenderId: "1049830615176",
-            appId: "1:1049830615176:web:9d7682884f6f4f96c9973d",
-            measurementId: "G-S8TEDDFXNW"
-        };
-
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
-    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../../js/main.js"></script>
 </body>
 
