@@ -1,0 +1,49 @@
+{
+  "name": "portofolio",
+  "version": "1.0.0",
+  "description": "my portofolio",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./server/app.js",
+    "build": "babel server -d build",
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node ./server/app.js",
+    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --require @babel/polyfill --require @babel/register ./server/tests/*.test.js --timeout 20000 --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nraufu/portofolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nraufu/portofolio/issues"
+  },
+  "homepage": "https://github.com/nraufu/portofolio#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "joi": "^17.2.0",
+    "mongoose": "^5.9.28",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.1.0",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mocha": "^8.1.1",
+    "nodemon": "^2.0.4",
+    "nyc": "^15.1.0"
+  }
+}

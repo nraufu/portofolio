@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Sign In</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="shortcut icon" href="../../assets/images/Logo.png" sizes="32x32" />
+</head>
+
+<body>
+    <div class="navigation">
+        <a href="../../index.html" class="navigation__logo"><img src="../../assets/images/Logo.png" alt="logo" /></a>
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
+
+    </div>
+
+    <div class="container">
+        <section class="signIn">
+            <div class="section__desc">
+                <h1 class="heading__primary">Log In</h1>
+                <p>
+                    Time to <span class="bold">write </span> ✍ some
+                    <span class="bold">Blogs...</span>
+                </p>
+            </div>
+            <div class="row">
+                <form action="#" id="form" class="width signIn-form">
+                    <div class="form__group center">
+                        <p class="error"></p>
+                    </div>
+                    <div class="form__group">
+                        <input type="email" class="form__input" name="username" placeholder="Username" id="username"
+                            required>
+                        <label for="username" class="form__label">Username</label>
+                    </div>
+                    <div class="form__group">
+                        <input type="password" class="form__input" name="password" placeholder="password" id="password"
+                            required>
+                        <label for="password" class="form__label">Password</label>
+                    </div>
+                    <div class="form__btn">
+                        <input type="submit" value="Enter &rarr;" class="btn btn--green" />
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpa_x2qEcYCIiNf3FPmy0yqE8zvAHbTBU",
+            authDomain: "portfolio-3855a.firebaseapp.com",
+            databaseURL: "https://portfolio-3855a.firebaseio.com",
+            projectId: "portfolio-3855a",
+            storageBucket: "portfolio-3855a.appspot.com",
+            messagingSenderId: "1049830615176",
+            appId: "1:1049830615176:web:9d7682884f6f4f96c9973d",
+            measurementId: "G-S8TEDDFXNW"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="../../js/main.js"></script>
+</body>
+
+</html>

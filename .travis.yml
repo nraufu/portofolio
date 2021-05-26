@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "10.16.3"
+cache:
+  directories:
+    - "node_modules"
+
+services:
+  - mongodb
+
+after_success: npm run coverage
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+    branch: develop
+
+notifications:
+  email: false
