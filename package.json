@@ -42,7 +42,7 @@
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
-    "mocha": "^8.1.1",
+    "mocha": "^8.4.0",
     "nodemon": "^2.0.4",
     "nyc": "^15.1.0"
   }
