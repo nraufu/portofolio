@@ -43,7 +43,7 @@
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
     "mocha": "^10.2.0",
-    "nodemon": "^2.0.4",
+    "nodemon": "^2.0.20",
     "nyc": "^15.1.0"
   }
 }
