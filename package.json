@@ -23,7 +23,7 @@
   "homepage": "https://github.com/nraufu/portofolio#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "joi": "^17.2.0",
     "mongoose": "^5.9.28",
     "swagger-ui-express": "^4.1.4"
